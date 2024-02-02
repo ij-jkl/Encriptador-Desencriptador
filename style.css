@@ -58,10 +58,18 @@ main {
     margin-left: 300px; /* Posiciona el formulario a 300px del borde izquierdo */
 }
 
+#mensaje {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    border-top: 30px solid transparent; /* Agrega un borde superior transparente */
+}
+
 #mensaje::placeholder {
-    color: blue; /* Cambia el color del texto del placeholder a azul */
-    display: inline-block;
-    margin-top: 300px; /* Añade margen en la parte superior del texto del placeholder */
+    color: blue; /* Cambia el color del texto del marcador de posición a azul */
 }
 
 h1 {
@@ -111,9 +119,9 @@ footer {
 }
 
 .enviar {
-    margin-left: 425px; /* Mover a la izquierda */
+    margin-left: 450px; /* Mover a la izquierda */
 }
 
 .copiar {
-    margin-right: 580px; /* Mover a la derecha */
+    margin-right: 500px; /* Mover a la derecha */
 }

@@ -23,7 +23,7 @@
     <main>
         <form class="formulario">
             <label for="mensajeUsuario"></label>
-            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí." cols="53" rows="44"></textarea>
+            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí." cols="50" rows="41"></textarea>
         </form>
         <div class="logo-container">
             <img src="imagenes/hombre.png" alt="Persona">
@@ -36,6 +36,18 @@
         <input type="button" value="Copiar" class="copiar">
     </footer>
     
-    
+    <script>
+        document.querySelector('.enviar').addEventListener('click', function() {
+            const mensaje = document.getElementById('mensaje').value;
+            console.log(mensaje); // Muestra el mensaje en la consola
+        });
+
+        document.querySelector('.copiar').addEventListener('click', function() {
+            const mensaje = document.getElementById('mensaje').value;
+            navigator.clipboard.writeText(mensaje)
+                .then(() => console.log('Texto copiado al portapapeles'))
+                .catch(err => console.error('Error al copiar texto: ', err));
+        });
+    </script>
 </body>
 </html>

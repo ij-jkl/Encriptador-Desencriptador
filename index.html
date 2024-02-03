@@ -58,6 +58,9 @@
 
         document.querySelector('.desencriptar').addEventListener('click', function() {
             const mensaje = document.getElementById('mensaje').value;
+            if (mensaje.trim() === "") {
+                return; // Si el campo de texto está vacío, salir de la función sin hacer nada es decir no oculto las imagenes
+            }
             const mensajeDesencriptado = desencriptarMensaje(mensaje);
 
             // Mostrar el mensaje desencriptado en el contenedor de texto

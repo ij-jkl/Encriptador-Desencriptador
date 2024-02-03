@@ -80,11 +80,17 @@ h1 {
 .logo-container {
     margin-top: 50px; /* Separación de la imagen del formulario */
     margin-left: 220px;
+    width: 416px; /* Mantener el ancho original */
+    height: 700px; /* Mantener la altura original */
     position: relative; /* Establece el contexto de posicionamiento para los elementos hijos */
     background-image: url('imagenes/fondotEXTI.png'); /* Agregar imagen de fondo */
     background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
     background-position: right; /* Ajusta la posición de la imagen de fondo */
     padding: 40px; /* Agregar espacio interno al contenedor */
+    border-radius: 5px; /* Agregar bordes redondeados */
+    display: flex; /* Usar flexbox para centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: flex-start; /* Alinear los elementos al inicio (parte superior) */
 }
 
 .texto {
@@ -93,6 +99,18 @@ h1 {
     left: 50%; /* Alinea el texto horizontalmente al centro */
     transform: translateX(-50%); /* Centra el texto horizontalmente */
 }
+
+.encriptado {
+    position: absolute; /* Posiciona el texto de manera absoluta dentro del contenedor */
+    top: 50%; /* Coloca el texto en la mitad del contenedor */
+    left: 50%; /* Alinea el texto horizontalmente al centro */
+    transform: translate(-50%, -50%); /* Centra el texto tanto horizontal como verticalmente */
+    color: blue; /* Color azul */
+    font-weight: bold; /* Fuente en negrita */
+    padding-top: 3%; /* Agrega padding desde la parte superior */
+}
+
+
 
 footer {
     display: flex;

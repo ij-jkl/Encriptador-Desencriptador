@@ -11,26 +11,22 @@
     <header>
         <div class="caja">
             <h1><img src="imagenes/logo.png" alt="Logo"></h1>
-            <nav>
-                <ul class="navegacion">
-                    <li><a href="#">Encriptador</a></li>
-                    <li><a href="#">Desencriptador</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     
     <main>
         <form class="formulario">
             <label for="mensajeUsuario"></label>
-            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí." cols="50" rows="41"></textarea>
+            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí." cols="50" rows="39"></textarea>
         </form>
         <div class="logo-container">
             <img src="imagenes/hombre.png" alt="Persona">
             <img src="imagenes/noMensaje.png" alt="Texto" class="texto">
+            <p id="mensajeEncriptado" class="texto"></p>
         </div>
-    </main>
-
+    </main> 
+    
+    
     <footer>
         <input type="button" value="Encriptar" class="enviar">
         <input type="button" value="Copiar" class="copiar">
@@ -39,15 +35,41 @@
     <script>
         document.querySelector('.enviar').addEventListener('click', function() {
             const mensaje = document.getElementById('mensaje').value;
-            console.log(mensaje); // Muestra el mensaje en la consola
+            const mensajeEncriptado = encriptarMensaje(mensaje);
+            console.log(mensajeEncriptado); // Muestra el mensaje encriptado en la consola
+                    
+            // Mostrar el mensaje encriptado en el contenedor de texto
+            const mensajeEncriptadoElement = document.getElementById('mensajeEncriptado');
+            mensajeEncriptadoElement.innerText = mensajeEncriptado;
+
+            // Agregar clase al texto encriptado
+            mensajeEncriptadoElement.classList.add('encriptado');
+
+            document.querySelector('.logo-container img[src="imagenes/hombre.png"]').style.display = 'none';
+            document.querySelector('.logo-container img[src="imagenes/noMensaje.png"]').style.display = 'none';
         });
+
+
+
+
+
 
         document.querySelector('.copiar').addEventListener('click', function() {
             const mensaje = document.getElementById('mensaje').value;
-            navigator.clipboard.writeText(mensaje)
-                .then(() => console.log('Texto copiado al portapapeles'))
-                .catch(err => console.error('Error al copiar texto: ', err));
+            const mensajeEncriptado = encriptarMensaje(mensaje);
+            navigator.clipboard.writeText(mensajeEncriptado)
+                .then(() => console.log('Texto encriptado copiado al portapapeles'))
+                .catch(err => console.error('Error al copiar texto encriptado: ', err));
         });
+
+        function encriptarMensaje(mensaje) {
+            // Aplicar las reglas de encriptación
+            return mensaje.replace(/e/g, 'enter')
+                          .replace(/i/g, 'imes')
+                          .replace(/a/g, 'ai')
+                          .replace(/o/g, 'ober')
+                          .replace(/u/g, 'ufat');
+        }
     </script>
 </body>
 </html>

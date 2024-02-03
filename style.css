@@ -1,10 +1,10 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: lightblue;
+    background-color: #20acd8;
 }
 
 header {
-    background-color: #BBBBBB;
+    background-color: #20acd8;
     padding: 20px 0;
     position: relative;
 }
@@ -48,14 +48,14 @@ nav a:hover {
 }
 
 main {
-    background-color: lightsteelblue;
+    background-color: #20acd8;
     display: flex;
 }
 
 .formulario {
-    margin-top: 50px; /* Espacio en la parte superior del formulario */
-    margin-right: 120px; /* Espacio a la derecha del formulario */
-    margin-left: 300px; /* Posiciona el formulario a 300px del borde izquierdo */
+    margin-top: 50px;
+    margin-right: 120px;
+    margin-left: 300px; 
 }
 
 #mensaje {
@@ -64,82 +64,89 @@ main {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-    border-top: 30px solid transparent; /* Agrega un borde superior transparente */
+    box-sizing: border-box;
+    border-top: 30px solid transparent; 
 }
 
 #mensaje::placeholder {
-    color: blue; /* Cambia el color del texto del marcador de posición a azul */
+    color: blue;
 }
 
 h1 {
     margin-top: 35px;
-    margin-left: auto; /* Pegar la imagen a la derecha */
+    margin-left: auto; 
 }
 
 .logo-container {
-    margin-top: 50px; /* Separación de la imagen del formulario */
+    margin-top: 50px; 
     margin-left: 220px;
-    width: 416px; /* Mantener el ancho original */
-    height: 700px; /* Mantener la altura original */
-    position: relative; /* Establece el contexto de posicionamiento para los elementos hijos */
-    background-image: url('imagenes/fondotEXTI.png'); /* Agregar imagen de fondo */
-    background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
-    background-position: right; /* Ajusta la posición de la imagen de fondo */
-    padding: 40px; /* Agregar espacio interno al contenedor */
-    border-radius: 5px; /* Agregar bordes redondeados */
-    display: flex; /* Usar flexbox para centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: flex-start; /* Alinear los elementos al inicio (parte superior) */
+    width: 416px; 
+    height: 700px;
+    position: relative; 
+    background-image: url('imagenes/fondotEXTI.png'); 
+    background-size: cover; 
+    background-position: right; 
+    padding: 40px; 
+    border-radius: 5px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
 }
 
 .texto {
-    position: absolute; /* Posiciona el texto de manera absoluta dentro del contenedor */
-    bottom: 40px; /* Ajusta la distancia desde la parte inferior del contenedor */
-    left: 50%; /* Alinea el texto horizontalmente al centro */
-    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%); 
 }
 
 .encriptado {
-    position: absolute; /* Posiciona el texto de manera absoluta dentro del contenedor */
-    top: 50%; /* Coloca el texto en la mitad del contenedor */
-    left: 50%; /* Alinea el texto horizontalmente al centro */
-    transform: translate(-50%, -50%); /* Centra el texto tanto horizontal como verticalmente */
-    color: blue; /* Color azul */
-    font-weight: bold; /* Fuente en negrita */
-    padding-top: 3%; /* Agrega padding desde la parte superior */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: blue; 
+    font-weight: bold; 
+    padding-top: 3%; 
 }
-
-
 
 footer {
     display: flex;
-    justify-content: space-between; /* Coloca los elementos a los extremos */
+    justify-content: space-between; 
     padding: 20px;
 }
 
-.enviar, .copiar {
-    width: auto; /* Ancho automático basado en el contenido */
-    padding: 10px 20px; /* Reducir el espacio interno */
-    font-size: 16px; /* Reducir el tamaño de la fuente */
+.enviar, .copiar, .desencriptar{
+    width: auto; 
+    padding: 10px 20px; 
+    font-size: 16px; 
     font-weight: bold;
     color: white;
     background: orange;
     border: none;
     border-radius: 5px;
-    transition: 0.5s all; /* Reducir la duración de la transición */
+    transition: 0.5s all; 
     cursor: pointer;
 }
 
-.enviar:hover, .copiar:hover {
+.enviar:hover, .copiar:hover, .desencriptar:hover{
     background: darkorange;
-    transform: scale(1.1); /* Reducir el efecto de escala */
+    transform: scale(1.1); 
 }
 
 .enviar {
-    margin-left: 450px; /* Mover a la izquierda */
+    margin-left: 350px;
+}
+
+.desencriptar{
+    margin-left: -500px;
 }
 
 .copiar {
-    margin-right: 500px; /* Mover a la derecha */
+    margin-right: 450px; 
+}
+
+.copyright {
+    text-align: center;
+    font-weight: bold; 
 }

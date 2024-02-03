@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="caja">
@@ -14,10 +15,11 @@
         </div>
     </header>
     
+
     <main>
         <form class="formulario">
             <label for="mensajeUsuario"></label>
-            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí." cols="50" rows="39"></textarea>
+            <textarea id="mensaje" class="inputUsuario" required placeholder="Ingrese su mensaje a Encriptar/Desencriptar aquí.    (Solo letras minisculas y sin acentos)" cols="50" rows="39"></textarea>
         </form>
         <div class="logo-container">
             <img src="imagenes/hombre.png" alt="Persona">
@@ -26,18 +28,22 @@
         </div>
     </main> 
     
-    
+
     <footer>
         <input type="button" value="Encriptar" class="enviar">
+        <input type="button" value="Desencriptar" class="desencriptar">
         <input type="button" value="Copiar" class="copiar">
     </footer>
     
+
     <script>
         document.querySelector('.enviar').addEventListener('click', function() {
             const mensaje = document.getElementById('mensaje').value;
+            if (mensaje.trim() === "") {
+                return; // Si el campo de texto está vacío, salir de la función sin hacer nada es decir no oculto las imagenes
+            }
             const mensajeEncriptado = encriptarMensaje(mensaje);
-            console.log(mensajeEncriptado); // Muestra el mensaje encriptado en la consola
-                    
+                        
             // Mostrar el mensaje encriptado en el contenedor de texto
             const mensajeEncriptadoElement = document.getElementById('mensajeEncriptado');
             mensajeEncriptadoElement.innerText = mensajeEncriptado;
@@ -50,8 +56,20 @@
         });
 
 
+        document.querySelector('.desencriptar').addEventListener('click', function() {
+            const mensaje = document.getElementById('mensaje').value;
+            const mensajeDesencriptado = desencriptarMensaje(mensaje);
 
+            // Mostrar el mensaje desencriptado en el contenedor de texto
+            const mensajeEncriptadoElement = document.getElementById('mensajeEncriptado');
+            mensajeEncriptadoElement.innerText = mensajeDesencriptado;
 
+            // Agregar clase al texto desencriptado
+            mensajeEncriptadoElement.classList.add('desencriptado');
+
+            document.querySelector('.logo-container img[src="imagenes/hombre.png"]').style.display = 'none';
+            document.querySelector('.logo-container img[src="imagenes/noMensaje.png"]').style.display = 'none';
+        });
 
 
         document.querySelector('.copiar').addEventListener('click', function() {
@@ -70,6 +88,17 @@
                           .replace(/o/g, 'ober')
                           .replace(/u/g, 'ufat');
         }
+
+        function desencriptarMensaje(mensaje) {
+            // Aplicar las reglas de desencriptación
+            return mensaje.replace(/enter/g, 'e')
+                          .replace(/imes/g, 'i')
+                          .replace(/ai/g, 'a')
+                          .replace(/ober/g, 'o')
+                          .replace(/ufat/g, 'u');
+        }
     </script>
+    <p class="copyright">&copy; Copyright Proyecto creado por Isaac Jordan 3/2/2024 </p>
 </body>
 </html>
+
